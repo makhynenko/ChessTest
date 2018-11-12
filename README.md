@@ -1,4 +1,4 @@
-# frontend-boilerplate
+# ChessTest
 ## Installation:
 Install npm dependencies
 ```
