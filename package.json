@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "cross-env NODE_ENV=development node server.js",
     "build-prod": "cross-env NODE_ENV=production webpack --config webpack.production.config.js && node server.js",
+    "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.production.config.js && node server.js",
     "lint": "eslint -c .eslintrc ./src/**/*.js ./src/**/*.jsx"
   },
   "author": "",
