@@ -98,3 +98,5 @@ export const getOptions = (key, board) => {
             return [];
     }
 };
+
+export const isDarkCell = key => (Math.floor(key / 10) + (key % 10)) % 2 === 0;

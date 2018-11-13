@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as styled from './Board.styles';
 import figures from '../../const/figures';
-import { getOptions, getWinner } from './data';
+import { getOptions, getWinner, isDarkCell } from './data';
 
 export default class Board extends Component {
     static propTypes = {
@@ -56,8 +56,6 @@ export default class Board extends Component {
         }
     };
 
-    isDarkCell = key => (Math.floor(key / 10) + (key % 10)) % 2 === 0;
-
     renderBlock = (content, key) => {
         const { selectedCell, options } = this.state;
         return (
@@ -66,7 +64,7 @@ export default class Board extends Component {
                 figure={figures[content]}
                 key={key}
                 isSelected={selectedCell === key}
-                isDarkCell={this.isDarkCell(key)}
+                isDarkCell={isDarkCell(key)}
                 isAvailable={options.includes(key)}
             />
         );
